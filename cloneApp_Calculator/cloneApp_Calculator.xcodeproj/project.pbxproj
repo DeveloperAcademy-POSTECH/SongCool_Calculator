@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2D9683EC2843AB5F0013791C /* ButtonViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D9683EB2843AB5F0013791C /* ButtonViews.swift */; };
+		2D9683EE2843AC010013791C /* CalculateModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D9683ED2843AC010013791C /* CalculateModel.swift */; };
 		2DC37B31283FA9070051253D /* cloneApp_CalculatorApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DC37B30283FA9070051253D /* cloneApp_CalculatorApp.swift */; };
 		2DC37B33283FA9070051253D /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DC37B32283FA9070051253D /* ContentView.swift */; };
 		2DC37B35283FA9080051253D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2DC37B34283FA9080051253D /* Assets.xcassets */; };
@@ -15,6 +17,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2D9683EB2843AB5F0013791C /* ButtonViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonViews.swift; sourceTree = "<group>"; };
+		2D9683ED2843AC010013791C /* CalculateModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculateModel.swift; sourceTree = "<group>"; };
 		2DC37B2D283FA9070051253D /* cloneApp_Calculator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = cloneApp_Calculator.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2DC37B30283FA9070051253D /* cloneApp_CalculatorApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = cloneApp_CalculatorApp.swift; sourceTree = "<group>"; };
 		2DC37B32283FA9070051253D /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -34,6 +38,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2D9683EA2843AB3D0013791C /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				2D9683ED2843AC010013791C /* CalculateModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		2DC37B24283FA9060051253D = {
 			isa = PBXGroup;
 			children = (
@@ -55,6 +67,7 @@
 			children = (
 				2DC37B30283FA9070051253D /* cloneApp_CalculatorApp.swift */,
 				2DC37B32283FA9070051253D /* ContentView.swift */,
+				2D9683EA2843AB3D0013791C /* Model */,
 				2DC37B3E283FA9110051253D /* View */,
 				2DC37B34283FA9080051253D /* Assets.xcassets */,
 				2DC37B36283FA9080051253D /* Preview Content */,
@@ -74,6 +87,7 @@
 			isa = PBXGroup;
 			children = (
 				2DC37B3F283FA9210051253D /* MainView.swift */,
+				2D9683EB2843AB5F0013791C /* ButtonViews.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -150,7 +164,9 @@
 			files = (
 				2DC37B33283FA9070051253D /* ContentView.swift in Sources */,
 				2DC37B40283FA9210051253D /* MainView.swift in Sources */,
+				2D9683EC2843AB5F0013791C /* ButtonViews.swift in Sources */,
 				2DC37B31283FA9070051253D /* cloneApp_CalculatorApp.swift in Sources */,
+				2D9683EE2843AC010013791C /* CalculateModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
