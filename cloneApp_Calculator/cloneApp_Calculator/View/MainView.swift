@@ -10,62 +10,93 @@ import SwiftUI
 
 struct MainView: View {
     
-    @ObservedObject var Calculator : Calculate  = Calculate()
-    
-    let padding: CGFloat = 12
-    let radius: CGFloat = (UIScreen.main.bounds.size.width - 60) / 4
+    @StateObject var Calculator : Calculate = Calculate()
+
+
+    let padding: CGFloat = 15
+    let radius: CGFloat = (UIScreen.main.bounds.size.width - 51) / 4
     
     
     var body: some View {
-        VStack(spacing: padding){
-            Spacer()
+        VStack(alignment: .trailing, spacing: padding){
+//            Spacer()
+            Text( Calculator.present )      // 화면에 보여지는 값
+                .foregroundColor(.white)
+                .font(.system(size: 95, weight: .light))
+                .padding(.trailing)
+            
+            
             HStack(alignment: .center, spacing: padding){
       
-                Button{
-                    
+                Button{                         // AC 버튼
+                    Calculator.initialization()
                 }label: {
-                    circleBtn(radius: radius, bgColor: .blue, context: "AC")
+                    ZStack{
+                    RoundedRectangle(cornerRadius: radius/2)
+                        .foregroundColor(Color("GrayCol"))
+                        Text((Calculator.mode == .defualt) ? "AC" : "A")
+                        .foregroundColor(.white)
+                    .font(.system(size: 34, weight: .medium))        }.frame(width: radius, height: radius)
                 }
-                Button{
-                    
+                Button{                         // +- 버튼
+                    Calculator.conversionBtn()
                 }label: {
                     //만들때, 데이터 타입을 변경하는 방법 설정하기.
-                    circleBtn(radius: radius, bgColor: .blue, context: "c")
+                    circleBtn(radius: radius, bgColor: Color("GrayCol"), context: "plus.forwardslash.minus")
+                }
+                Button{                         // % 버튼
+                    Calculator.percentBtn()
+                }label: {
+                    circleBtn(radius: radius, bgColor: Color("GrayCol"), context: "percent")
+                }
+                OperationBtn(Calculator: Calculator, radius: radius, context: "divide")
+            }
+            
+            HStack(alignment: .center, spacing: padding){
+                NumberBtn(Calculator: Calculator, radius: radius, context: 7)
+                NumberBtn(Calculator: Calculator, radius: radius, context: 8)
+                NumberBtn(Calculator: Calculator, radius: radius, context: 9)
+                OperationBtn(Calculator: Calculator, radius: radius, context: "multiply")
+            }
+            HStack(alignment: .center, spacing: padding){
+                NumberBtn(Calculator: Calculator, radius: radius, context: 4)
+                NumberBtn(Calculator: Calculator, radius: radius, context: 5)
+                NumberBtn(Calculator: Calculator, radius: radius, context: 6)
+                OperationBtn(Calculator: Calculator, radius: radius, context: "minus")
+            }
+            HStack(alignment: .center, spacing: padding){
+                NumberBtn(Calculator: Calculator, radius: radius, context: 1)
+                NumberBtn(Calculator: Calculator, radius: radius, context: 2)
+                NumberBtn(Calculator: Calculator, radius: radius, context: 3)
+                OperationBtn(Calculator: Calculator, radius: radius, context: "plus")
+            }
+            HStack(alignment: .center, spacing: padding){
+                Button{
+                    Calculator.numberBtn(num: 0)
+                }label: {
+                    ZStack(alignment: .leading){
+                        RoundedRectangle(cornerRadius: radius/2)
+                            .foregroundColor(Color("DarkgrayCol"))
+                        Text("0")
+                            .foregroundColor(.white)
+                            .font(.system(size: 40, weight: .regular))
+                            .frame(width: radius, height: radius)
+                    }.frame(width: 2 * radius + padding, height: radius)
                 }
                 Button{
-                    
+                    Calculator.decimalpointBtn()
                 }label: {
-                    circleBtn(radius: radius, bgColor: .blue, context: "%")
-                }
-                OperationBtn(radius: radius, context: "/")
-            }
-            HStack(alignment: .center, spacing: padding){
-                NumberBtn(radius: radius, context: 7)
-                NumberBtn(radius: radius, context: 8)
-                NumberBtn(radius: radius, context: 9)
-                OperationBtn(radius: radius, context: "*")
-            }
-            HStack(alignment: .center, spacing: padding){
-                NumberBtn(radius: radius, context: 4)
-                NumberBtn(radius: radius, context: 5)
-                NumberBtn(radius: radius, context: 6)
-                OperationBtn(radius: radius, context: "-")
-            }
-            HStack(alignment: .center, spacing: padding){
-                NumberBtn(radius: radius, context: 1)
-                NumberBtn(radius: radius, context: 2)
-                NumberBtn(radius: radius, context: 3)
-                OperationBtn(radius: radius, context: "+")
-            }
-            HStack(alignment: .center, spacing: padding){
-                NumberBtn(radius: radius, context: 0)
-                NumberBtn(radius: radius, context: 0)
-                Button{
+                    ZStack{
+                        RoundedRectangle(cornerRadius: radius/2)
+                            .foregroundColor(Color("DarkgrayCol"))
+                        Text(".")
+                            .foregroundColor(.white)
+                            .font(.system(size: 40, weight: .regular))
+                    }.frame(width: radius, height: radius)
                     
-                }label: {
-                    circleBtn(radius: radius, bgColor: .gray, context: ".")
+
                 }
-                OperationBtn(radius: radius, context: "=")
+                OperationBtn(Calculator: Calculator, radius: radius, context: "equal")
             }
             
         }

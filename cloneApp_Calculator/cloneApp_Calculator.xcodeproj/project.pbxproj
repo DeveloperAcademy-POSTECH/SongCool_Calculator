@@ -19,6 +19,7 @@
 /* Begin PBXFileReference section */
 		2D9683EB2843AB5F0013791C /* ButtonViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonViews.swift; sourceTree = "<group>"; };
 		2D9683ED2843AC010013791C /* CalculateModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculateModel.swift; sourceTree = "<group>"; };
+		2D9683F3284478D30013791C /* cloneApp-Calculator-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "cloneApp-Calculator-Info.plist"; sourceTree = SOURCE_ROOT; };
 		2DC37B2D283FA9070051253D /* cloneApp_Calculator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = cloneApp_Calculator.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2DC37B30283FA9070051253D /* cloneApp_CalculatorApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = cloneApp_CalculatorApp.swift; sourceTree = "<group>"; };
 		2DC37B32283FA9070051253D /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -65,6 +66,7 @@
 		2DC37B2F283FA9070051253D /* cloneApp_Calculator */ = {
 			isa = PBXGroup;
 			children = (
+				2D9683F3284478D30013791C /* cloneApp-Calculator-Info.plist */,
 				2DC37B30283FA9070051253D /* cloneApp_CalculatorApp.swift */,
 				2DC37B32283FA9070051253D /* ContentView.swift */,
 				2D9683EA2843AB3D0013791C /* Model */,
@@ -298,6 +300,7 @@
 				DEVELOPMENT_TEAM = LR5A5F6L75;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "cloneApp-Calculator-Info.plist";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -327,6 +330,7 @@
 				DEVELOPMENT_TEAM = LR5A5F6L75;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "cloneApp-Calculator-Info.plist";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
