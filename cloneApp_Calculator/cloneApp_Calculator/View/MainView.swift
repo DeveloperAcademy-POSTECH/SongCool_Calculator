@@ -14,7 +14,7 @@ struct MainView: View {
 
 
     let padding: CGFloat = 15
-    let radius: CGFloat = (UIScreen.main.bounds.size.width - 51) / 4
+    let radius: CGFloat = (UIScreen.main.bounds.size.width - 15 * 3 - 30) / 4
     
     
     var body: some View {
@@ -35,8 +35,9 @@ struct MainView: View {
                     RoundedRectangle(cornerRadius: radius/2)
                         .foregroundColor(Color("GrayCol"))
                         Text((Calculator.mode == .defualt) ? "AC" : "A")
-                        .foregroundColor(.white)
-                    .font(.system(size: 34, weight: .medium))        }.frame(width: radius, height: radius)
+                        .foregroundColor(.black)
+                    .font(.system(size: 34, weight: .medium))
+                    }.frame(width: radius, height: radius)
                 }
                 Button{                         // +- 버튼
                     Calculator.conversionBtn()

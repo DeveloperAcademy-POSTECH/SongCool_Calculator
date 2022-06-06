@@ -21,7 +21,7 @@ struct circleBtn: View{
             RoundedRectangle(cornerRadius: radius/2)
                 .foregroundColor(bgColor)
             Text("\(Image(systemName: context))")
-                .foregroundColor(.white)
+                .foregroundColor(.black)
             .font(.system(size: 32, weight: .bold))
         }.frame(width: radius, height: radius)
     }
@@ -64,22 +64,8 @@ struct OperationBtn: View{
         Button{
             print("\(context) 눌림")
             
-            Calculator.operationBtn()
+            Calculator.operationBtn(context: context)
             
-            //이 로직을 모델에서 하는게 더 좋은가?
-            if(context == "plus"){
-                Calculator.plusBtn()
-            }else if(context == "minus"){
-                Calculator.minusBtn()
-            }else if(context == "multiply"){
-                Calculator.multiplyBtn()
-            }else if(context == "divide"){
-                Calculator.divideBtn()
-            }else if(context == "equal"){
-                Calculator.resultBtn()
-            }else {
-                print("err")
-            }
         }label: {
             
             ZStack{
@@ -98,7 +84,7 @@ struct OperationBtn: View{
 struct ButtonViews_Previews: PreviewProvider {
     static var previews: some View {
         VStack{
-            circleBtn(radius: 100, bgColor: Color("DarkgrayCol"), context: "plus")
+            circleBtn(radius: 100, bgColor: Color("GrayCol"), context: "plus")
             NumberBtn(Calculator: Calculate(), radius: 100, context: 1)
             OperationBtn(Calculator: Calculate(), radius: 100, context: "plus")
         }
