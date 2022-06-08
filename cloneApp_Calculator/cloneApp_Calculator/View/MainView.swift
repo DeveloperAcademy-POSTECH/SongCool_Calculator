@@ -20,7 +20,7 @@ struct MainView: View {
     var body: some View {
         VStack(alignment: .trailing, spacing: padding){
 //            Spacer()
-            Text( Calculator.present )      // 화면에 보여지는 값
+            Text((Calculator.decimalpointSel == 1) ? Calculator.present +  "." : Calculator.present + "")      // 화면에 보여지는 값
                 .foregroundColor(.white)
                 .font(.system(size: 95, weight: .light))
                 .padding(.trailing)
@@ -34,7 +34,7 @@ struct MainView: View {
                     ZStack{
                     RoundedRectangle(cornerRadius: radius/2)
                         .foregroundColor(Color("GrayCol"))
-                        Text((Calculator.mode == .defualt) ? "AC" : "A")
+                        Text((Calculator.mode == .defualt) ? "AC" : "C")
                         .foregroundColor(.black)
                     .font(.system(size: 34, weight: .medium))
                     }.frame(width: radius, height: radius)
